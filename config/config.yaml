@@ -261,7 +261,7 @@ storage:
   # 用于 MCP Server 等场景：爬虫存到远程，MCP 拉取到本地分析
   pull:
     enabled: false                    # 是否启用启动时自动拉取
-    days: 7                           # 拉取最近 N 天的数据
+    days: 1                           # 拉取最近 N 天的数据
 
 
 # ===============================================================
@@ -347,7 +347,7 @@ advanced:
     hotness: 0.1                      # 热度权重
 
   # 多账号限制
-  max_accounts_per_channel: 3         # 每个渠道最大账号数量
+  max_accounts_per_channel: 30         # 每个渠道最大账号数量
 
   # 消息分批大小（字节）- 内部配置，请勿修改
   batch_size:
