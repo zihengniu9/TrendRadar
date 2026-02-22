@@ -15,7 +15,31 @@ app:
   # 完整时区列表: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   timezone: "Asia/Shanghai"
   show_version_update: true           # 显示版本更新提示
-
+# 2. 题材概念关键词 (新增：按照主流题材配置)
+# ===============================================================
+keywords:
+  # 科技/题材概念
+  - "人工智能"
+  - "大模型"
+  - "AI"
+  - "半导体"
+  - "芯片"
+  - "华为"
+  - "低空经济"
+  - "飞行汽车"
+  - "机器人"
+  - "具身智能"
+  - "商业航天"
+  - "卫星互联网"
+  - "量子技术"
+  - "新质生产力"
+  # 宏观/行业
+  - "房地产"
+  - "消费"
+  - "新能源"
+  - "固态电池"
+  - "出海"
+  - "跨境电商"
 
 # ===============================================================
 # 2. 数据源 - 热榜平台
@@ -93,7 +117,7 @@ rss:
     - id: "yahoo-finance"
       name: "雅虎财经"
       url: "https://finance.yahoo.com/news/rssindex"
-      enabled: false                  # 禁用
+      enabled: true                  # 禁用
 
     # 自定义源示例
     # - id: "custom-feed"
@@ -128,7 +152,7 @@ report:
                                       # platform: 按平台/来源分组显示
   rank_threshold: 5                   # 排名高亮阈值
   sort_by_position_first: false       # true=按配置位置排序，false=按热点条数排序
-  max_news_per_keyword: 0             # 每个关键词最大显示数量（0=不限制）
+  max_news_per_keyword: 5             # 每个关键词最大显示数量（0=不限制）
   reverse_content_order: false        # false=热点词汇统计在前，true=新增热点新闻在前
 
 
@@ -163,10 +187,10 @@ notification:
   # 注意：GitHub Actions 执行时间不稳定，时间范围建议至少留足 2 小时
   #       如果想要精准的定时推送，建议使用 Docker 部署在个人服务器上
   push_window:
-    enabled: false                    # 是否启用推送时间窗口控制
-    start: "20:00"                    # 开始时间（北京时间）
+    enabled: true                    # 是否启用推送时间窗口控制
+    start: "06:30"                    # 开始时间（北京时间）
     end: "22:00"                      # 结束时间（北京时间）
-    once_per_day: true                # true=窗口内只推送一次，false=窗口内每次执行都推送
+    once_per_day: false               # true=窗口内只推送一次，false=窗口内每次执行都推送
 
   # 📋 独立展示区配置（可选功能）
   # 用途：将指定平台的完整热榜/RSS 单独展示，不受关键词过滤影响
@@ -342,9 +366,9 @@ advanced:
   # 排序权重（用于重新排序不同平台的热搜）
   # 合起来等于 1
   weight:
-    rank: 0.6                         # 排名权重
+    rank: 0.4                         # 排名权重
     frequency: 0.3                    # 频次权重
-    hotness: 0.1                      # 热度权重
+    hotness: 0.3                      # 热度权重
 
   # 多账号限制
   max_accounts_per_channel: 30         # 每个渠道最大账号数量
